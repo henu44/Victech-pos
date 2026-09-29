@@ -1,0 +1,209 @@
+/* ------------------------------
+   General
+------------------------------ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+.users-header {
+    height: 70px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.users-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+/* ------------------------------
+   Back button
+------------------------------ */
+
+.icon-bt {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f1f5f9;
+    color: #0f172a;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.icon-bt:hover {
+    background: #e2e8f0;
+    transform: translateX(-2px);
+}
+
+.icon-bt:active {
+    transform: scale(0.95);
+}
+
+
+/* ------------------------------
+   Add User button
+------------------------------ */
+
+.add-user-btn {
+    margin-left: auto;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0f172a;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.add-user-btn:hover {
+    background: #1e293b;
+}
+
+
+/* ------------------------------
+   Main container
+------------------------------ */
+
+.users-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 30px;
+}
+
+
+/* ------------------------------
+   Page title
+------------------------------ */
+
+.page-title {
+    margin-bottom: 25px;
+}
+
+.page-title h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.page-title p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ------------------------------
+   Table container
+------------------------------ */
+
+.users-table-container {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    overflow-x: auto;
+}
+
+
+/* ------------------------------
+   Table
+------------------------------ */
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th {
+    padding: 16px;
+
+    text-align: left;
+
+    background: #f8fafc;
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.users-table td {
+    padding: 16px;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.users-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.users-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    .users-header {
+        padding: 0 15px;
+    }
+
+    .users-container {
+        padding: 20px 15px;
+    }
+
+    .users-header h1 {
+        font-size: 20px;
+    }
+
+    .add-user-btn {
+        padding: 9px 12px;
+    }
+
+}

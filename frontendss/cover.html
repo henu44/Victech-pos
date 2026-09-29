@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cover</title>
+    <link rel="stylesheet" href="cover.css">
+</head>
+<body>
+    <header class="logo-header">
+        <div class="logo">
+            <img src="logo.jpeg" alt="">
+        </div>
+    </header>
+        <div class="details">
+            <div class="welcome-header">
+                <h2 class="message">Welcome Back!</h2>
+                <p class="subtitle">Sign in to continue</p>
+            </div>
+
+            <div class="sighn-up">
+                <form   class="login-form" id="form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required autocomplete="current-password">
+                    </div>
+
+                    <div class="form-actions">
+                        <label class="checkbox-label">
+                        <input type="checkbox" name="remember_me">
+                        <span>Remember me</span>
+                        </label>
+                        <a href="/forgot-password" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+
+                    <a href="signup.html" class="btn btn-secondary">Create New Account</a>
+                </form>
+            </div>
+
+
+
+
+        </div>
+         
+    </div>
+    <script>
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit",async function (event){
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            try{
+                const response = await fetch("http://127.0.0.1:8000/login" , {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type" :"application/json"
+                    },
+
+                    body: JSON.stringify({
+                        username:username,
+                        password: password
+
+                    })
+                });
+
+                const data = await response.json();
+                if(response.ok) {
+                    alert(data.message || "login successfull");
+
+                    window.location.href = "Dashboad.html";
+
+                }else{
+                    alert(data.detail || "invalid details")
+                }
+
+
+            }catch(error){
+                console.error("Connection error:", error);
+                alert("Could not connect to the server.");
+
+                
+            }
+
+           
+            
+        });
+
+    </script>
+    
+</body>
+</html>

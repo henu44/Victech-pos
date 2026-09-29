@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers - Victech POS</title>
+  <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <button class="icon-btn" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <h1>Customers</h1>
+      <button class="icon-btn" aria-label="Add Customer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </header>
+
+    <main class="customers-content">
+      
+      <!-- Search Input -->
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search customers">
+      </div>
+
+      <!-- Customer Directory List -->
+      <div class="customer-list">
+        
+        <div class="card customer-card">
+          <div class="avatar">J</div>
+          <div class="details">
+            <span class="name">John Kamau</span>
+            <span class="phone">+254 712 345 678</span>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="card customer-card">
+          <div class="avatar">M</div>
+          <div class="details">
+            <span class="name">Mary Wanjiku</span>
+            <span class="phone">+254 723 456 789</span>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="card customer-card">
+          <div class="avatar">D</div>
+          <div class="details">
+            <span class="name">David Ochieng</span>
+            <span class="phone">+254 734 567 890</span>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="card customer-card">
+          <div class="avatar">J</div>
+          <div class="details">
+            <span class="name">Jane Njeri</span>
+            <span class="phone">+254 745 678 901</span>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="card customer-card">
+          <div class="avatar">P</div>
+          <div class="details">
+            <span class="name">Peter Mwangi</span>
+            <span class="phone">+254 756 789 012</span>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="card customer-card">
+          <div class="avatar">G</div>
+          <div class="details">
+            <span class="name">Grace Atieno</span>
+            <span class="phone">+254 767 890 123</span>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="/home" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="/sales" class="nav-item">
+        <span class="nav-icon">🛍️</span>
+        <span class="nav-label">Sales</span>
+      </a>
+      <a href="/products" class="nav-item">
+        <span class="nav-icon">📦</span>
+        <span class="nav-label">Products</span>
+      </a>
+      <a href="/reports" class="nav-item">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Reports</span>
+      </a>
+      <a href="/more" class="nav-item active">
+        <span class="nav-icon">•••</span>
+        <span class="nav-label">More</span>
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - Victech POS</title>
+  <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <button class="icon-btn" aria-label="Back" onclick="goTo('Dashboad.html')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <h1>Reports</h1>
+    </header>
+
+    <main class="reports-content">
+      
+      <!-- Date Range Selector -->
+      <div class="date-selector">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>20 May, 2026 - 26 May, 2026</span>
+        <span class="chevron">▼</span>
+      </div>
+
+      <!-- Overview Cards (2x2 Grid) -->
+      <div class="metrics-grid">
+        <div class="card metric-card">
+          <span class="card-label">Total Sales</span>
+          <h3>KES 245,760</h3>
+        </div>
+        <div class="card metric-card">
+          <span class="card-label">Total Orders</span>
+          <h3>182</h3>
+        </div>
+        <div class="card metric-card">
+          <span class="card-label">Total Profit</span>
+          <h3>KES 78,450</h3>
+        </div>
+        <div class="card metric-card">
+          <span class="card-label">Expenses</span>
+          <h3>KES 18,200</h3>
+        </div>
+      </div>
+
+      <!-- Sales Overview Chart Container -->
+      <div class="card chart-card">
+        <div class="chart-header">
+          <h2>Sales Overview</h2>
+        </div>
+        
+        <!-- SVG Line Chart Mockup -->
+        <div class="chart-container">
+          <svg class="chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+            <polyline
+              fill="none"
+              stroke="#2563eb"
+              stroke-width="3"
+              points="0,90 50,70 100,100 150,50 200,80 250,40 300,75"
+            />
+          </svg>
+          <div class="chart-labels">
+            <span>20 May</span>
+            <span>22 May</span>
+            <span>24 May</span>
+            <span>26 May</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Selling Products Block -->
+      <div class="section-block">
+        <h2 class="section-title">Top Selling Products</h2>
+        
+        <div class="top-products-list">
+          <div class="top-product-item">
+            <span class="rank">1</span>
+            <div class="thumb">📺</div>
+            <div class="details">
+              <span class="name">Samsung 32" Smart TV</span>
+              <small class="meta">TV | 4 Units</small>
+            </div>
+            <span class="total-revenue">KES 74,000</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="Dashboad.html" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="sales.html" class="nav-item">
+        <span class="nav-icon">🛍️</span>
+        <span class="nav-label">Sales</span>
+      </a>
+      <a href="products.html" class="nav-item">
+        <span class="nav-icon">📦</span>
+        <span class="nav-label">Products</span>
+      </a>
+      <a href="reports.html" class="nav-item active">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Reports</span>
+      </a>
+      <a href="more.html" class="nav-item">
+        <span class="nav-icon">•••</span>
+        <span class="nav-label">More</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script>
+    function goTo(page){
+      window.location.href = page;
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Victech POS</title>
+  <link rel="stylesheet" href="Dashboad.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Top Header Bar -->
+    <header class="app-header">
+      <button class="icon-btn" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <h1>Dashboard</h1>
+      <button class="icon-btn" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </button>
+    </header>
+
+    <main class="dashboard-content">
+      
+      <!-- Primary Banner Card -->
+      <section class="card banner-card">
+        <div class="banner-info">
+          <span class="card-label">Total Sales (Today)</span>
+          <h2 class="amount">KES 45,760</h2>
+          <span class="badge positive">+12% from yesterday</span>
+        </div>
+        <div class="banner-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M5 19h14v2H5zM19 17H5V7h14v10zM7 9h2v6H7zm4-3h2v9h-2zm4 5h2v4h-2z"/></svg>
+        </div>
+      </section>
+
+      <!-- 2x2 Metric Grid -->
+      <section class="metrics-grid">
+        <div class="card metric-card">
+          <div class="metric-icon">📦</div>
+          <div class="metric-data">
+            <span class="card-label">Total Orders</span>
+            <h3 id="products">
+              32
+            </h3>
+          </div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="metric-icon">👥</div>
+          <div class="metric-data">
+            <span class="card-label">Total Customers</span>
+            <h3>128</h3>
+          </div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="metric-icon">📱</div>
+          <div class="metric-data">
+            <span class="card-label">Total Products</span>
+            <h3>356</h3>
+          </div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="metric-icon warning">⚠️</div>
+          <div class="metric-data">
+            <span class="card-label">Low Stock Items</span>
+            <h3 class="text-danger">14</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions Grid -->
+      <section class="section-block">
+        <h2 class="section-title">Quick Actions</h2>
+        <div class="quick-actions-grid">
+          <button class="action-btn" onclick="goTo('AddToSale.html')">
+            <span class="action-icon">🛒</span>
+            <span>New Sale</span>
+          </button>
+          <button class="action-btn" onclick="goTo('AddProducts.html')">
+            <span class="action-icon">+📦</span>
+            <span> Add Products</span>
+          </button>
+          <button class="action-btn">
+            <span class="action-icon">👥</span>
+            <span>Customers</span>
+          </button>
+          <button class="action-btn">
+            <span class="action-icon">📊</span>
+            <span>Reports</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Recent Transactions List -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2 class="section-title">Recent Transactions</h2>
+          <a href="/transactions" class="see-all">View All</a>
+        </div>
+
+        <div class="transaction-list">
+          <div class="card transaction-item">
+            <div class="tx-info">
+              <strong>INV-00032</strong>
+              <small>26 May, 2026</small>
+            </div>
+            <div class="tx-amount">
+              <strong>KES 12,450</strong>
+              <span class="pay-method">Cash</span>
+            </div>
+          </div>
+
+          <div class="card transaction-item">
+            <div class="tx-info">
+              <strong>INV-00031</strong>
+              <small>26 May, 2026</small>
+            </div>
+            <div class="tx-amount">
+              <strong>KES 5,800</strong>
+              <span class="pay-method">MPESA</span>
+            </div>
+          </div>
+
+          <div class="card transaction-item">
+            <div class="tx-info">
+              <strong>INV-00030</strong>
+              <small>25 May, 2026</small>
+            </div>
+            <div class="tx-amount">
+              <strong>KES 2,450</strong>
+              <span class="pay-method">Cash</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="Dashboad.html" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="AddToSale.html" class="nav-item">
+        
+        <span class="nav-icon"> 🛒<span id="sale-count" class="sale-count">0</span></span>
+        <span class="nav-label">New Sales</span>
+      </a>
+      <a href="products.html" class="nav-item">
+        <span class="nav-icon">📦</span>
+        <span class="nav-label">Products</span>
+      </a>
+      <a href="reports.html" class="nav-item">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Reports</span>
+      </a>
+      <a href="more.html" class="nav-item">
+        <span class="nav-icon">•••</span>
+        <span class="nav-label">More</span>
+      </a>
+    </nav>
+
+  </div>
+</body>
+<script>
+  function goTo(page){
+    window.location.href = page;
+  }
+
+  const sale = JSON.parse(localStorage.getItem("currentSale")) || [];
+  let totalItems = 0;
+
+  sale.forEach(function(product){
+    totalItems += product.quantity;
+  });
+
+  document.getElementById("sale-count").textContent = totalItems;
+</script>
+</html>

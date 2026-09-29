@@ -1,0 +1,401 @@
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    color: #222;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+.category-tabs {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+overflow-x: auto;
+scrollbar-width: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+display: none;
+}
+
+.category-tab {
+flex: 0 0 auto;
+border: none;
+padding: 10px 18px;
+border-radius: 20px;
+background: #ffffff;
+color: #555;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+}
+
+.category-tab.active {
+background: #2563eb;
+color: white;
+}
+
+/* Swipeable category area */
+
+.category-container {
+display: flex;
+overflow-x: auto;
+
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth;
+
+scrollbar-width: none;
+
+margin-left: -20px;
+margin-right: -20px;
+
+
+}
+
+.category-container::-webkit-scrollbar {
+display: none;
+}
+
+/* Each category takes the whole screen */
+
+.category-page {
+flex: 0 0 100%;
+width: 100%;
+
+scroll-snap-align: start;
+
+padding-left: 20px;
+padding-right: 20px;
+
+
+}
+
+/* Product card */
+
+.product-card {
+display: flex;
+align-items: center;
+gap: 15px;
+
+background: white;
+padding: 15px;
+margin-bottom: 12px;
+
+border-radius: 12px;
+
+cursor: pointer;
+
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+transition: transform 0.15s ease;
+
+
+}
+
+.product-card:active {
+transform: scale(0.97);
+}
+
+/* Product image */
+
+.image {
+width: 65px;
+height: 65px;
+
+flex-shrink: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: #f1f3f5;
+border-radius: 10px;
+
+overflow: hidden;
+
+
+}
+
+.image img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+/* Product information */
+
+.product-info {
+flex: 1;
+}
+
+.product-name {
+display: block;
+font-size: 16px;
+font-weight: 600;
+}
+
+.price {
+display: block;
+margin-top: 5px;
+
+color: #2563eb;
+font-size: 14px;
+font-weight: 600;
+
+
+}
+
+.stock {
+display: block;
+margin-top: 4px;
+
+color: #16a34a;
+font-size: 12px;
+
+
+}
+
+/* Arrow */
+
+.arrow {
+font-size: 25px;
+color: #999;
+}
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 65px;
+
+    background: white;
+    border-top: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    color: #777;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 20px;
+}
+
+.nav-item small {
+    font-size: 11px;
+}
+
+.nav-item.active {
+    color: #2563eb;
+}
+
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 380px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 140px;
+    height: 140px;
+
+    margin: 10px auto 20px;
+
+    background: #f5f5f5;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.modal-content p {
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.modal-content input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 8px 0 20px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.modal-action {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-action button {
+    flex: 1;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.stock-btn {
+    background: #16a34a;
+}
+
+.sell-btn {
+    background: #2563eb;
+}
+
+.modal-button button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    color: #16a34a;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 0.7rem;
+}
+
+.nav-item.active {
+  color: #2a245c;
+  font-weight: 600;
+}
+
+.sale-count{
+   display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background-color: #ef4444;
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-left: 4px;
+
+}

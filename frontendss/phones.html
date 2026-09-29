@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phones</title>
+    <link rel="stylesheet" href="phone.css">
+</head>
+<body>
+    <div class="container">
+            <!-- HEADER -->
+            <div class="header">
+                <a href="products.html">
+                    <button class="icon-btn" aria-label="Back">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                </a>
+                <h1>Phones</h1>
+            </div>
+
+
+            <!-- CATEGORY TABS -->
+            <div class="category-tabs">
+
+                <button class="category-tab active" data-index="0">
+                    Cash Phones
+                </button>
+
+                <button class="category-tab" data-index="1">
+                    Loan Phones
+                </button>
+
+            </div>
+
+
+         <!-- SWIPEABLE AREA -->
+            <div class="category-container" id="categoryContainer">
+
+
+            <!-- ================= CASH PHONES ================= -->
+            <section class="section category-page">
+
+                <h2 class="section-title">
+                    Cash Phones
+                </h2>
+                <div class="search-box">
+                    <input
+                        type="search"
+                        id="phoneSearch"
+                        placeholder="Search phones..."
+                    >
+                </div>
+
+
+
+                <!-- Samsung A16 -->
+                <div class="product-list"
+                    id="product-list"
+                    >
+
+                    <!-- <div class="image">
+                        <img
+                            src="OIP.jpg"
+                            alt="Samsung A16">
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-name">
+                            Samsung A16
+                        </span>
+
+                        <span class="price">
+                            KES 18,000
+                        </span>
+
+                        <span class="stock">
+                            Stock: 10
+                        </span>
+
+                    </div>
+
+                    <span class="arrow">
+                        ›
+                    </span> -->
+
+                </div>
+
+                <!-- product details  -->
+
+             <div class="modal" id="productModal"  >
+
+                <div class="modal-content">
+
+                    <!-- Close button -->
+                    <button class="close-btn" onclick="closeModal()">
+                        ×
+                    </button>
+
+                    <!-- Product image -->
+                    <div class="modal-image">
+                        <img src="OIP.jpg" alt="Samsung A16">
+                    </div>
+
+                    <!-- Product name -->
+                    <h2 id="modalProduct">
+                        Samsung A16
+                    </h2>
+
+                    <!-- Product price -->
+                    <p id="modalPrice">
+                        KES 18,000
+                    </p>
+
+                    <!-- Quantity -->
+                    <label for="quantity">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        value="1"
+                        min="1"
+                    >
+
+                    <!-- Actions -->
+                    <div class="modal-action">
+
+                        <button
+                            class="stock-btn"
+                            onclick="addStock()">
+                            Add Stock
+                        </button>
+                        <p style="display:none ;" id="sucadd">
+                            Stock added succesfylly
+                        </p>
+
+                        <button class="sell-btn" onclick="sellProduct()">
+                            Sell
+                        </button>
+
+                        <div id="priceModal" class="modal">
+                            <div class="modal-content">
+                                <h2>Sell Product</h2>
+
+                                <label for="sellingPrice">Selling Price:</label>
+                                <input type="number" id="sellingPrice" placeholder="Enter price" min="0">
+
+                                <div class="modal-button">
+                                    <button onclick="confirmSale()">Confirm Sale</button>
+                                    <button onclick="closeSell()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            </section>
+
+
+            <!-- ================= LOAN PHONES ================= -->
+            <section class="section category-page">
+
+                <h2 class="section-title">
+                    Loan Phones
+                </h2>
+                <div class="search-box">
+                    <input
+                        type="search"
+                        id="phoneSearch"
+                        placeholder="Search phones..."
+                    >
+                </div>
+
+
+
+                <!-- Samsung A16 -->
+                <div class="product-card"
+                    onclick="openPhone('Samsung A16', 'loan')">
+
+                    <div class="image">
+                        <img
+                            src="OIP.jpg"
+                            alt="Samsung A16">
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-name">
+                            Samsung A16
+                        </span>
+
+                        <span class="price">
+                            Deposit: KES 3,000
+                        </span>
+
+                        <span class="stock">
+                            Stock: 10
+                        </span>
+
+                    </div>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </div>
+
+
+              
+
+            </section>
+
+             <nav class="bottom-nav">
+
+            <div class="nav-item" onclick="goTo('Dashboad.html')">
+                <span>🏠</span>
+                <small>Home</small>
+            </div>
+
+            <div class="nav-item" onclick="goTo('sales.html')">
+                <span>🛒 </span><span></span>
+                <small>Sales</small>
+            </div>
+
+            <div class="nav-item active" onclick="goTo('products.html')">
+                <span>📦</span>
+                <small>Products</small>
+            </div>
+
+            <div class="nav-item" onclick="goTo('reports.html')">
+                <span>📊</span>
+                <small>Reports</small>
+            </div>
+
+            <div class="nav-item" onclick="goTo('more.html')">
+                <span>•••</span>
+                <small>More</small>
+            </div>
+
+        </nav>
+
+        </div>
+        
+       
+
+
+
+    </div>
+    <script>
+        function openPhone() { 
+            document.getElementById("productModal").style.display = "block";
+
+            } 
+        function closeModal(){
+            document.getElementById("productModal").style.display = "none";
+
+        }
+        function addStock(){
+            document.getElementById("sucadd").style.display="block";
+
+        }
+
+       
+        function goTo(page){
+            window.location.href = page;
+
+        }
+        function sellProduct() {
+            document.getElementById("priceModal").style.display = "flex";
+
+            // Automatically focus the price input
+            document.getElementById("sellingPrice").focus();
+        }
+
+        function closeSell() {
+            document.getElementById("priceModal").style.display = "none";
+        }
+
+        function confirmSale() {
+            const price = document.getElementById("sellingPrice").value;
+
+            if (price === "" || price <= 0) {
+                alert("Please enter a valid selling price.");
+                return;
+            }
+
+            alert("Product sold successfully for " + price);
+
+            closeModal();
+        }
+       function addToSale(phone) {
+
+            let sale = JSON.parse(localStorage.getItem("currentSale")) || [];
+
+            const existingProduct = sale.find(function(product) {
+                return product.id === phone.id;
+            });
+
+            if (existingProduct) {
+
+                existingProduct.quantity += 1;
+
+            } else {
+
+                sale.push({
+                    id: phone.id,
+                    name: phone.name,
+                    price: phone.marked_price,
+                    quantity: 1
+                });
+
+            }
+
+            localStorage.setItem("currentSale", JSON.stringify(sale));
+
+            alert("product added successfully")
+        }
+        
+
+        
+
+        
+        
+        const categoryContainer = document.getElementById("categoryContainer"); 
+        const categoryTabs = document.querySelectorAll(".category-tab"); 
+        /* -------------------------------- CLICK CATEGORY -------------------------------- */ 
+        categoryTabs.forEach(function(tab) { tab.addEventListener("click", function() { const index = Number(this.dataset.index);
+        
+        categoryContainer.scrollTo({ left: categoryContainer.clientWidth * index, behavior: "smooth" }); }); }); 
+        /* -------------------------------- DETECT SWIPE / SCROLL -------------------------------- */
+        categoryContainer.addEventListener("scroll", function() { const index = Math.round( categoryContainer.scrollLeft / categoryContainer.clientWidth ); categoryTabs.forEach(function(tab, i) { tab.classList.toggle( "active", i === index ); }); });
+
+            /* -------------------------------- OPEN PHONE -------------------------------- */
+         
+
+        // fetch data from db
+        async function loadProducts() {
+            const response = await fetch("http://127.0.0.1:8000/products");
+            const products = await response.json();
+
+            const productList = document.getElementById("product-list");
+
+            const phones = products.filter(function(product) {
+                    return product.category === "phones";
+                });
+
+                console.log(phones)
+            phones.forEach(function(phone){
+              const productCard = document.createElement("div");
+              productCard.className = "product-card";
+
+               productCard.innerHTML = `
+                    <div class="product-thumb">📱</div>
+
+                    <div class="product-details">
+                        <span class="product-title">${phone.name}</span>
+                        <span>KES ${phone.marked_price}</span>
+                        <span>Stock: ${phone.quantity}</span>
+                    </div>
+
+                    <span class="chevron">›</span>
+                `;
+                productList.appendChild(productCard);
+
+                productCard.onclick = function() {
+                addToSale(phone);
+                 };
+
+               
+
+        
+
+            });
+            
+
+            
+            
+        }
+        loadProducts();
+
+
+
+
+    </script> 
+    
+</body>
+</html>

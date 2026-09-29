@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .email {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .profile-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .profile-info p {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .edit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+        .icon-bt {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f1f5f9;
+    color: #0f172a;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+    }
+
+    .icon-bt:hover {
+        background: #e2e8f0;
+        transform: translateX(-2px);
+    }
+
+    .icon-bt:active {
+        transform: scale(0.95);
+    }
+
+    .icon-bt svg {
+        width: 24px;
+        height: 24px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <button class="icon-bt " aria-label="Back" onclick="goTo('Dashboad.html')">
+                <svg width="30" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+
+        <div class="profile-picture">
+            👤
+        </div>
+
+        <h1>Emanuel</h1>
+        <p class="email">emma@gmail.com</p>
+
+        <div class="profile-info">
+            <p><strong>Username:</strong>Emanuel</p>
+            <p><strong>Phone:</strong> +254 700 000 000</p>
+            <p><strong>Role:</strong> Cashier</p>
+            <p><strong></strong></p>
+        </div>
+
+        <button class="edit-button" onclick="editProfile()">
+            Edit Profile
+        </button>
+         <button class="edit-button" onclick="editProfile()">
+             Logout
+        </button>
+        <div class="profile-info" id="editProfile" style="display: none;">
+
+            <h3>Edit Profile</h3>
+
+            <label for="edit-name">Full Name</label>
+            <input type="text" id="edit-name">
+
+            <label for="edit-username">Username</label>
+            <input type="text" id="edit-username">
+
+            <label for="edit-email">Email</label>
+            <input type="email" id="edit-email">
+
+            <div class="edit-actions">
+                <button onclick="saveProfile()">Save Changes</button>
+                <button onclick="closeEditProfile()">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function editProfile() {
+            document.getElementById("editProfile").style.display = "block";
+            
+        }
+        function goTo(page){
+            window.location.href = "Dashboad.html"
+        }
+
+
+    </script>
+
+</body>
+</html>

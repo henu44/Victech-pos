@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Sale - Victech POS</title>
+  <link rel="stylesheet" href="newsales.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- App Header -->
+    <header class="app-header">
+      <button class="icon-btn" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <h1>New Sale</h1>
+      <button class="icon-btn" aria-label="More options">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/>
+        </svg>
+      </button>
+    </header>
+
+    <main class="sale-content">
+      
+      <!-- Search & Barcode Scan Bar -->
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Scan barcode or search product">
+        <button class="scan-btn" aria-label="Scan barcode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/></svg>
+        </button>
+      </div>
+
+      <!-- Selectable Products List -->
+      <div class="product-selection-list">
+        
+        <div class="product-item">
+          <div class="thumb">📺</div>
+          <div class="details">
+            <span class="name">Samsung 32" Smart TV</span>
+            <span class="price">KES 18,500</span>
+          </div>
+          <button class="add-btn" aria-label="Add item">⊕</button>
+        </div>
+
+        <div class="product-item">
+          <div class="thumb">🎧</div>
+          <div class="details">
+            <span class="name">Oraimo AirPods Pro</span>
+            <span class="price">KES 2,950</span>
+          </div>
+          <button class="add-btn" aria-label="Add item">⊕</button>
+        </div>
+
+        <div class="product-item">
+          <div class="thumb">🔋</div>
+          <div class="details">
+            <span class="name">Anker Power Bank 20000mAh</span>
+            <span class="price">KES 3,200</span>
+          </div>
+          <button class="add-btn" aria-label="Add item">⊕</button>
+        </div>
+
+        <div class="product-item">
+          <div class="thumb">🔌</div>
+          <div class="details">
+            <span class="name">HDMI Cable 2M</span>
+            <span class="price">KES 350</span>
+          </div>
+          <button class="add-btn" aria-label="Add item">⊕</button>
+        </div>
+
+        <div class="product-item">
+          <div class="thumb">⚡</div>
+          <div class="details">
+            <span class="name">Samsung Fast Charger</span>
+            <span class="price">KES 1,250</span>
+          </div>
+          <button class="add-btn" aria-label="Add item">⊕</button>
+        </div>
+
+      </div>
+
+      <!-- Order Summary Card -->
+      <div class="summary-card">
+        <div class="summary-row">
+          <span>Items (3)</span>
+          <span class="val">KES 24,700</span>
+        </div>
+        <div class="summary-row">
+          <span>Discount</span>
+          <span class="val">KES 0</span>
+        </div>
+        <div class="summary-row total">
+          <strong>Total</strong>
+          <strong class="total-amount">KES 24,700</strong>
+        </div>
+
+        <a href="/checkout" class="checkout-btn">
+          <span>Proceed to Checkout</span>
+          <span>→</span>
+        </a>
+      </div>
+
+    </main>
+
+  </div>
+</body>
+</html>

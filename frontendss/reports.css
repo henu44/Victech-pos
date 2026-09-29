@@ -1,0 +1,220 @@
+/* Reports.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: #edeef0;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 420px;
+  background-color: #d1d9e1;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.app-header h1 {
+  font-size: 1.125rem;
+  color: #111827;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  display: flex;
+}
+
+/* Page Layout */
+.reports-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Date Selector Filter */
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.date-selector span:nth-child(2) {
+  flex: 1;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* Base Card Style */
+.card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.875rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.card-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.metric-card h3 {
+  font-size: 1.1rem;
+  color: #111827;
+  margin-top: 0.25rem;
+}
+
+/* Chart Container */
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chart-header h2 {
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100px;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+/* Top Selling Section */
+.section-title {
+  font-size: 0.9rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.top-products-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-product-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.rank {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.thumb {
+  width: 32px;
+  height: 32px;
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.details .name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.details .meta {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.total-revenue {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 0.7rem;
+}
+
+.nav-item.active {
+  color: #2a245c;
+  font-weight: 600;
+}

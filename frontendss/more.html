@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More - Victech POS</title>
+  <link rel="stylesheet" href="More.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <button class="icon-btn" aria-label="Back" onclick="goTo('Dashboad.html')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <h1>More</h1>
+    </header>
+
+    <main class="more-content">
+      
+      <!-- Menu List -->
+      <div class="menu-list">
+
+        <a href="profile.html" class="menu-item">
+          <div class="menu-icon">👤</div>
+          <span class="menu-label">My profile</span>
+          <span class="chevron">›</span>
+        </a>
+        
+        <a href="/suppliers" class="menu-item">
+          <div class="menu-icon">🚚</div>
+          <span class="menu-label">Suppliers</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="/expenses" class="menu-item">
+          <div class="menu-icon">🧾</div>
+          <span class="menu-label">Expenses</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="/categories" class="menu-item">
+          <div class="menu-icon">📁</div>
+          <span class="menu-label">Categories</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="users.html" class="menu-item">
+          <div class="menu-icon">👥</div>
+          <span class="menu-label">Users</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="/settings" class="menu-item">
+          <div class="menu-icon">⚙️</div>
+          <span class="menu-label">Settings</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="/backup" class="menu-item">
+          <div class="menu-icon">☁️</div>
+          <span class="menu-label">Backup & Restore</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="/help" class="menu-item">
+          <div class="menu-icon">❓</div>
+          <span class="menu-label">Help & Support</span>
+          <span class="chevron">›</span>
+        </a>
+
+        <a href="/about" class="menu-item">
+          <div class="menu-icon">ℹ️</div>
+          <span class="menu-label">About Victech POS</span>
+          <span class="chevron">›</span>
+        </a>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="Dashboad.html" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="sales.html" class="nav-item">
+        <span class="nav-icon">🛍️</span>
+        <span class="nav-label">Sales</span>
+      </a>
+      <a href="products.html" class="nav-item">
+        <span class="nav-icon">📦</span>
+        <span class="nav-label">Products</span>
+      </a>
+      <a href="reports.html" class="nav-item">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Reports</span>
+      </a>
+    
+      
+    </nav>
+
+  </div>
+
+  <script>
+    function goTo(page){
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add products</title>
+    <link rel="stylesheet" href="addproducts.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Add Product Form -->
+        <div class="add-product-form">
+            <button class="icon-bt " aria-label="Back" onclick="goTo('Dashboad.html')">
+                <svg width="30" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+
+        <h2>Add Product</h2>
+
+        <form id="form">
+            <input type="text" id="product_name" placeholder="Product name">
+
+            <input type="text" id="product_category" placeholder="Category">
+            <label for="">Select Category</label>
+            <select name="" id="">
+                <option value="">Phones</option>
+                <option value="">Laptop</option>
+                <option value="">cables</option>
+                <option value="">Laptop</option>
+            </select>
+
+          
+
+            <input type="number" id="marked_price" placeholder="Marked price">
+
+
+            <input type="number" id="quantity" placeholder="Quantity">
+
+            <button type="submit" id="add_product-btn">
+                Add Product
+            </button>
+        </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function goTo(page){
+            window.location.href = page;
+        }
+        const form = document.getElementById("form");
+        
+        
+        form.addEventListener("submit" , async function (event){
+
+            event.preventDefault();
+
+            const product_name = document.getElementById("product_name").value;
+            const product_category = document.getElementById("product_category").value;
+            const marked_price = document.getElementById("marked_price").value;
+            const Quantity = document.getElementById("quantity").value;
+
+
+             try {
+            const response = await fetch("http://127.0.0.1:8000/products", {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name: product_name,
+                    category: product_category,
+                    marked_price: marked_price,
+                    quantity: Quantity,
+                })
+            });
+
+            // Convert FastAPI response to JSON
+            const data = await response.json();
+
+            // Check if request was successful
+            if (response.ok) {
+                alert(data.message || "producr added succeffully!");
+
+                // Optional: redirect to login page
+                window.location.href = "Dashboad.html";
+            } else {
+                alert(data.detail || " failed to add product.");
+            }
+
+        } catch (error) {
+            console.error("Connection error:", error);
+            alert("Could not connect to the server.");
+        }
+
+
+            
+
+
+        });
+    </script>
+    
+</body>
+</html>

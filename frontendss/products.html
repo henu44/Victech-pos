@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Victech POS</title>
+  <link rel="stylesheet" href="Products.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Top Header Bar -->
+    <header class="app-header">
+     <a href="Dashboad.html">
+       <button class="icon-btn" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+     </a>
+      <h1>Products</h1>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Filter">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Add Product">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="products-content">
+      
+      <!-- Search Field -->
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search products...">
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-tabs">
+        <button class="tab-btn active">All</button>
+        <button class="tab-btn">Electronics</button>
+        <button class="tab-btn">Accessories</button>
+        <button class="tab-btn">Others</button>
+      </div>
+
+      <!-- Product List -->
+      <div class="product-list" id="product-list">
+        
+          <div class="card product-card">
+            <div class="product-thumb">📺</div>
+            <div class="product-details">
+              <span class="product-title">Smart TVs</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+
+          <div class="card product-card" onclick="goTo('phones.html')">
+            <div class="product-thumb">📺</div>
+            <div class="product-details">
+              <span class="product-title">Phones</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="Dashboad.html" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="AddToSale.html" class="nav-item">
+        
+        <span class="nav-icon"> 🛒<span id="sale-count" class="sale-count">0</span></span>
+        <span class="nav-label">New Sales</span>
+      </a>
+      <a href="products.html" class="nav-item active">
+        <span class="nav-icon">📦</span>
+        <span class="nav-label">Products</span>
+      </a>
+      <a href="reports.html" class="nav-item">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Reports</span>
+      </a>
+      <a href="more.html" class="nav-item">
+        <span class="nav-icon">•••</span>
+        <span class="nav-label">More</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script>
+    function goTo(page){
+      window.location.href = page;
+    }
+    const sale = JSON.parse(localStorage.getItem("currentSale")) || [];
+    let totalItems = 0;
+
+      sale.forEach(function(product){
+        totalItems += product.quantity;
+      });
+
+  document.getElementById("sale-count").textContent = totalItems;
+
+    
+
+    // async function loadProducts(){
+    //   const response = await fetch("http://127.0.0.1:8000/products");
+    //   const products = await response.json();
+
+    //   const productList = document.getElementById("product-list");
+
+    //   const categories = new Set(products.map(product => product.category));
+
+    //   categories.forEach(function(category){
+    //     const productCard = document.createElement("div");
+    //     productCard.className = "card product-card";
+
+    //       productCard.innerHTML = `
+    //         <div class="product-thumb" onclick = "goTo()">📦</div>
+
+    //         <div class="product-details">
+    //             <span class="product-title">${category}</span>
+    //         </div>
+
+    //         <span class="chevron">›</span>
+    //     `;
+
+    //     productList.appendChild(productCard);
+
+        
+
+        
+    //   });
+
+    
+    // }
+
+    // loadProducts();
+    
+
+    
+  </script>
+
+</body>
+</html>

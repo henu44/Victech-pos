@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Victech POS</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Header Bar -->
+    <header class="app-header">
+      <button class="icon-btn" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <h1>Checkout</h1>
+    </header>
+
+    <main class="checkout-content">
+      
+      <!-- Customer Selector -->
+      <div class="form-group">
+        <label>Customer</label>
+        <div class="select-box">
+          <span>Walk-in Customer</span>
+          <span class="chevron">▼</span>
+        </div>
+      </div>
+
+      <!-- Payment Method Selection -->
+      <div class="form-group">
+        <label>Payment Method</label>
+        <div class="payment-options">
+          <button class="pay-btn active">Cash</button>
+          <button class="pay-btn">MPESA</button>
+          <button class="pay-btn">Card</button>
+          <button class="pay-btn">Other</button>
+        </div>
+      </div>
+
+      <!-- Order Items Preview -->
+      <div class="items-summary">
+        <span class="section-label">Items</span>
+        
+        <div class="item-row">
+          <span class="qty">1</span>
+          <div class="item-details">
+            <span class="item-name">Samsung 32" Smart TV</span>
+            <span class="item-meta">KES 18,500</span>
+          </div>
+          <span class="item-total">KES 18,500</span>
+        </div>
+
+        <div class="item-row">
+          <span class="qty">1</span>
+          <div class="item-details">
+            <span class="item-name">Oraimo AirPods Pro</span>
+            <span class="item-meta">KES 2,950</span>
+          </div>
+          <span class="item-total">KES 2,950</span>
+        </div>
+
+        <div class="item-row">
+          <span class="qty">1</span>
+          <div class="item-details">
+            <span class="item-name">Anker Power Bank 20000mAh</span>
+            <span class="item-meta">KES 3,200</span>
+          </div>
+          <span class="item-total">KES 3,200</span>
+        </div>
+      </div>
+
+      <!-- Bill Totals & Change Calculation -->
+      <div class="totals-block">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span>KES 24,650</span>
+        </div>
+        <div class="total-row">
+          <span>Discount</span>
+          <span>KES 0</span>
+        </div>
+        <div class="total-row main-total">
+          <strong>Total</strong>
+          <strong>KES 24,650</strong>
+        </div>
+        <div class="total-row">
+          <span>Amount Received</span>
+          <span>KES 30,000</span>
+        </div>
+        <div class="total-row change-row">
+          <strong>Change</strong>
+          <strong class="text-success">KES 5,350</strong>
+        </div>
+      </div>
+
+      <!-- Complete Action -->
+      <button class="complete-btn">Complete Sale</button>
+
+    </main>
+
+  </div>
+</body>
+</html>
