@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Victech POS</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div class="mobile-container">
+    
+    <!-- Top Curved Header -->
+    <header class="logo-header">
+      <div class="logo">
+        <img src="logo.jpeg" alt="">
+       
+      </div>
+    </header>
+
+    <main class="signup-content">
+      
+      <!-- Welcome Subtitle -->
+      <div class="welcome-block">
+        <h2 class="title">Create Account</h2>
+        <p class="subtitle">Sign up to get started with Victech POS</p>
+      </div>
+
+      <!-- Sign Up Form -->
+      <form action= class="signup-form" id="form">
+        
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter username" required autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter email address" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Select Role</label>
+          <select name="" id="Role">
+            <option value="">Admin</option>
+            <option value="">Manager</option>
+            <option value="">Cashier</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create password" required autocomplete="new-password">
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm password" required autocomplete="new-password">
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary">Create Account</button>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <a href="cover.html" class="btn btn-secondary">Already have an account? Log In</a>
+
+      </form>
+
+    </main>
+
+  </div>
+
+
+
+<script>
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", async function (event) {
+        // Prevent the browser from submitting the form normally
+        event.preventDefault();
+
+        // Get valueqs from the form
+        const fullname = document.getElementById("fullname").value;
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const Role = document.getElementById("Role").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        // Check that passwords match
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        // Send data to FastAPI
+        try {
+            const response = await fetch("http://127.0.0.1:8000/register", {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    fullname: fullname,
+                    username: username,
+                    email: email,
+                    role:Role,
+                    password: password,
+                    confirm_password: confirmPassword
+                })
+            });
+
+            // Convert FastAPI response to JSON
+            const data = await response.json();
+
+            // Check if request was successful
+            if (response.ok) {
+                alert(data.message || "Account created successfully!");
+
+                // Optional: redirect to login page
+                window.location.href = "cover.html";
+            } else {
+                alert(data.detail || "Registration failed.");
+            }
+
+        } catch (error) {
+            console.error("Connection error:", error);
+            alert("Could not connect to the server.");
+        }
+    });
+</script>
+
+</body>
+</html>
